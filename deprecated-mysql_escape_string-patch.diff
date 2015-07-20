@@ -1,0 +1,13 @@
+diff --git a/magento-db-repair-tool-1.2.php b/magento-db-repair-tool-1.2.php
+index 2460be2..179d03b 100755
+--- a/magento-db-repair-tool-1.2.php
++++ b/magento-db-repair-tool-1.2.php
+@@ -196,7 +196,7 @@ class Tools_Db_Repair_Mysql4
+                 $bind[$k] = 'NULL';
+             }
+             else {
+-                $bind[$k] = "'" . mysql_escape_string($v) . "'";
++                $bind[$k] = "'" . mysql_real_escape_string($v) . "'";
+             }
+         }
+         return vsprintf($statement, $bind);
