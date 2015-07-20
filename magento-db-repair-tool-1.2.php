@@ -196,7 +196,7 @@ class Tools_Db_Repair_Mysql4
                 $bind[$k] = 'NULL';
             }
             else {
-                $bind[$k] = "'" . mysql_escape_string($v) . "'";
+                $bind[$k] = "'" . mysql_real_escape_string($v) . "'";
             }
         }
         return vsprintf($statement, $bind);
